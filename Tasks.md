@@ -6,5 +6,5 @@
 |#4 - Generate XML Sales by Vendor Report| [milendd](https://github.com/milendd)| In progress| 
 |#5 - JSON Reports in MongoDB| [micev](https://github.com/micev)| In progress| 
 |#6 - Load Expense Data from XML|[shukriev](https://github.com/shukriev)| In progress| 
-|#7 - Load Data to MySQL| | In progress| 
+|#7 - Load Data to MySQL|[Rado](https://github.com/rvmladenov)| In progress| 
 |#8 - Export from SQLite and MySQL to Excel| | In progress| 
