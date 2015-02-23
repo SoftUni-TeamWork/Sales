@@ -352,3 +352,153 @@ For example, the **PDF report** may hold a table like the sample below:
     </tr>
   </tbody>
 </table>
+
+## Problem #4 – Generate XML Sales by Vendor Report
+
+Create a C# / Java / other program to **generate report in XML format** holding the sales by vendor for given period, like the sample below:
+
+####Sales-by-Vendors-Report.xml
+```xml
+<?xml version="1.0" encoding="utf-8">
+<sales>
+  <sale vendor="Nestle Sofia Corp.">
+    <summary date="20-Jul-2014" total-sum="54.75" />
+    <summary date="21-Jul-2014" total-sum="40.35" />
+    <summary date="22-Jul-2014" total-sum="40.60" />
+  </sale>
+  <sale vendor="Targovishte Bottling Company Ltd.">
+    <summary date="20-Jul-2014" total-sum="150.20" />
+    <summary date="21-Jul-2014" total-sum="709.30" />
+    <summary date="22-Jul-2014" total-sum="249.40" />
+  </sale>
+  <sale vendor="Zagorka Corp.">
+    <summary date="20-Jul-2014" total-sum="144.80" />
+    <summary date="21-Jul-2014" total-sum="341.59" />
+    <summary date="22-Jul-2014" total-sum="385.80" />
+  </sale>
+<sales>
+```
+
+Save the report in a local XML file.
+
+**Input** : SQL Server database; start date; end date.
+
+**Output** : C# / Java / other program that generates an XML file holding the sales by vendor report.
+
+## Problem #5 – JSON Reports in MongoDB
+
+Write a C# / Java / other program to create **reports** for the sales of each product for given period in **JSON format** and save all reports in **MongoDB** andas JSON files. All reports should look like the samples below. The reports should be saved in the **MongoDB** database in a collection called **SalesByProductReports** as well as in the file system in a folder called " **Json-Reports**", in files named " **XX.json**" where **XX** is the product ID.
+
+Sample product reports in JSON format:
+
+####3.json
+```json
+{
+  "product-id" : 3,
+  "product-name" : "Beer “Beck’s”",
+  "vendor-name" : "Zagorka Corp.",
+  "total-quantity-sold" : 236,
+  "total-incomes" : 262.95,
+}
+```
+####1.json
+```json
+{
+  "product-id" : 1,
+  "product-name" : "Beer “Zagorka”",
+  "vendor-name" : "Zagorka Corp.",
+  "total-quantity-sold" : 673,
+  "total-incomes" : 609.24,
+}
+```
+####4.json
+```json
+{
+  "product-id" : 4,
+  "product-name" : "Chocolate “Milka”",
+  "vendor-name" : "Nestle Sofia Corp.",
+  "total-quantity-sold" : 47,
+  "total-incomes" : 135.70,
+}
+```
+
+####2.json
+```json
+{
+  "product-id" : 2,
+  "product-name" : "Vodka “Targovishte”",
+  "vendor-name" : "Targovishte Bottling Company Ltd.",
+  "total-quantity-sold" : 144,
+  "total-incomes" : 1155.90,
+}
+```
+
+**Input** : SQL Server database; start date; end date.
+
+**Output** : a set of JSON files in the file system; data loaded in MongoDB database.
+
+## Problem #6 – Load Expense Data from XML
+
+Create an **XML** file holding **expenses by vendor and month**. For example, see the file [Sample-Vendor-Expenses.xml](file:///tmp/d20150223-3-hi9r91/Sample-Vendor-Expenses.xml):
+
+#####Vendor-Expenses.xml
+```xml
+<?xml version="1.0" encoding="utf-8">
+<expenses-by-month>
+  <vendor name="Nestle Sofia Corp.">
+    <expenses month="Jul-2013">30.00</expenses>
+    <expenses month="Aug-2013">40.00</expenses>
+  </vendor>
+  <vendor name="Targovishte Bottling Company Ltd.">
+    <expenses month="Jul-2013">200.00</expenses>
+    <expenses month="Aug-2013">180.00</expenses>
+  </vendor>
+  <vendor name="Zagorka Corp.">
+    <expenses month="Jul-2013">120.00</expenses>
+    <expenses month="Aug-2013">180.00</expenses>
+  </vendor>
+<expenses-by-month>
+```
+
+**Create new tables and relationships** to keep the expenses by period in your SQL Server database.
+
+Write a C# / Java / other program to **read the** XML file, parse it and **save the data** in the **SQL Server** database.
+
+**Input** : XML file holding expenses by vendors by months.
+
+**Output** : program for loading an XML expense report in SQL Server; data loaded in the SQL Server database.
+
+## Problem #7 – Load Data to MySQL
+
+Create a C# / Java / other program to transfer the expense and incomes data from SQL Server to MySQL. This should transfer the data holding the **vendors** , their **products** , their **incomes by product** and their **expenses**. The data transfer logic should keep all existing data in the MySQL database and insert only the non-existing table rows from the SQL Server database. You are free to design the MySQL DB schema in a way you think will work well.
+
+**Input** : SQL Server database holding the vendors, products, incomes and expenses.
+
+**Output** : program for loading vendors, products, incomes and expenses in MySQL database.
+
+## Problem #8 – Export from SQLite and MySQL to Excel
+
+Create a **SQLite database** holding **tax information** for each product, similar to the example below:
+
+| **Product Name** | **Tax** |
+| --- | --- |
+| Beer "Beck's" | 20% |
+| Beer "Zagorka" | 20% |
+| Chocolate "Milka" | 18% |
+| Vodka "Targovishte" | 25% |
+| … | … |
+
+Write a C# / Java / other program to **read the MySQL database** , **read the SQLite database** and generate a **single Excel 2007** file (XLSX) holding the incomes, expenses, taxes and the financial result for each vendor. For example:
+
+| **Vendor** | **Incomes** | **Expenses** | **Total Taxes** | **Financial Result** |
+| --- | --- | --- | --- | --- |
+| Nestle Sofia Corp. | 135.70 | 30.00 | 24.43 | **81.27** |
+| Targovishte Bottling Company Ltd. | 1155.90 | 200.00 | 288.98 | **666.92** |
+| Zagorka Corp. | 872.19 | 120.00 | 174.44 | **577.75** |
+| … | … | …. | … | **…** |
+
+You are **not** allowed to connect to the SQL Server or Oracle databases to read information, neither to access any of the XML, JSON, ZIP or Excel files in the file system. Use only the MySQL and SQLite databases as data sources.
+
+**Input** : SQLite database; MySQL database.
+
+**Output** : Excel 2007 file (.xlsx) holding the financial results report.
