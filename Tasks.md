@@ -7,4 +7,4 @@
 |#5 - JSON Reports in MongoDB| [micev](https://github.com/micev)| In progress| 
 |#6 - Load Expense Data from XML|[shukriev](https://github.com/shukriev)| In progress| 
 |#7 - Load Data to MySQL|[Rado](https://github.com/rvmladenov)| In progress| 
-|#8 - Export from SQLite and MySQL to Excel| | In progress| 
+|#8 - Export from SQLite and MySQL to Excel| [d-georgiev-91](https://github.com/d-georgiev-91) | In progress| 
