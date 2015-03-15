@@ -21,14 +21,14 @@ IF OBJECT_ID('MeasurementUnits') IS NOT NULL
 -- Create tables
 CREATE TABLE MeasurementUnits(
 	Id int IDENTITY(1,1) NOT NULL,
-	Name nvarchar(10) NOT NULL,
+	Name nvarchar(10) NOT NULL UNIQUE,
 	CONSTRAINT PK_MeasurementUnits PRIMARY KEY CLUSTERED (Id)
 )
 GO
 
 CREATE TABLE Products(
 	Id int IDENTITY(1,1) NOT NULL,
-	Name nvarchar(40) NOT NULL,
+	Name nvarchar(40) NOT NULL UNIQUE,
 	VendorId int NOT NULL,
 	MeasurementUnitId int NOT NULL,
 	Price money NOT NULL,
@@ -48,14 +48,14 @@ GO
 
 CREATE TABLE Supermarkets(
 	Id int IDENTITY(1,1) NOT NULL,
-	Name nvarchar(60) NOT NULL,
+	Name nvarchar(60) NOT NULL UNIQUE,
 	CONSTRAINT PK_Supermarkets PRIMARY KEY CLUSTERED (Id)
 )
 GO
 
 CREATE TABLE Vendors(
 	Id int IDENTITY(1,1) NOT NULL,
-	Name nvarchar(50) NOT NULL,
+	Name nvarchar(50) NOT NULL UNIQUE,
 	CONSTRAINT PK_Vendors PRIMARY KEY CLUSTERED (Id)
 )
 GO
