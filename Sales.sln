@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Data.Mongo", "Sales.Data.Mongo\Sales.Data.Mongo.csproj", "{6906D0A6-7917-4E86-B942-ABD9F79A7CB8}"
 EndProject
@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Data.OracleSql", "Sal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Data.Sqlite", "Sales.Data.Sqlite\Sales.Data.Sqlite.csproj", "{9891F224-0A9D-44A8-B778-71240201B2D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Data.SqlServer", "Sales.Data.SqlServer\Sales.Data.SqlServer.csproj", "{ADAE4491-1C6A-4593-A4B2-0311E6BF9483}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplicateOracleDBIntoMSSQL", "ReplicateOracleDBIntoMSSQL\ReplicateOracleDBIntoMSSQL.csproj", "{9162E030-B71A-4782-A044-60D459C68BC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{9891F224-0A9D-44A8-B778-71240201B2D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9891F224-0A9D-44A8-B778-71240201B2D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9891F224-0A9D-44A8-B778-71240201B2D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ADAE4491-1C6A-4593-A4B2-0311E6BF9483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ADAE4491-1C6A-4593-A4B2-0311E6BF9483}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ADAE4491-1C6A-4593-A4B2-0311E6BF9483}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ADAE4491-1C6A-4593-A4B2-0311E6BF9483}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9162E030-B71A-4782-A044-60D459C68BC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9162E030-B71A-4782-A044-60D459C68BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9162E030-B71A-4782-A044-60D459C68BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9162E030-B71A-4782-A044-60D459C68BC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

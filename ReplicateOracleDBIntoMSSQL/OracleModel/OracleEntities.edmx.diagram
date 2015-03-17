@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fd32e5d496c541268fb0509b388ff8f8" Name="Diagram1">
+        <EntityTypeShape EntityType="OracleModel.MEASURMENT_UNITS" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleModel.PRODUCT" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleModel.SALE" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleModel.SUPERMARKET" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleModel.VENDOR" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="OracleModel.PRODUCTS_MEASURMENT_UNIT_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="OracleModel.PRODUCTS_VENDORS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="OracleModel.SALES_PRODUCTS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="OracleModel.SALES_SUPERMARKETS_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

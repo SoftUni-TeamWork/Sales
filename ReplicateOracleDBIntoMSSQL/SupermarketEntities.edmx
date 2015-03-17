@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MEASURMENT_UNITS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="varchar2" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRODUCTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="VENDOR_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MEASURMENT_UNIT_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PRICE" Type="number" Precision="19" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SALES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SALED_ON" Type="date" Nullable="false" />
+          <Property Name="SUPERMARKET_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PRODUCT_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="QUANTITY" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUPERMARKETS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="varchar2" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VENDORS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="PRODUCTS_MEASURMENT_UNIT_FK">
+          <End Role="MEASURMENT_UNITS" Type="Self.MEASURMENT_UNITS" Multiplicity="1" />
+          <End Role="PRODUCTS" Type="Self.PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEASURMENT_UNITS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUCTS">
+              <PropertyRef Name="MEASURMENT_UNIT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRODUCTS_VENDORS_FK">
+          <End Role="VENDORS" Type="Self.VENDORS" Multiplicity="1" />
+          <End Role="PRODUCTS" Type="Self.PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VENDORS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUCTS">
+              <PropertyRef Name="VENDOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SALES_PRODUCTS_FK">
+          <End Role="PRODUCTS" Type="Self.PRODUCTS" Multiplicity="1" />
+          <End Role="SALES" Type="Self.SALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SALES">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SALES_SUPERMARKETS_FK">
+          <End Role="SUPERMARKETS" Type="Self.SUPERMARKETS" Multiplicity="1" />
+          <End Role="SALES" Type="Self.SALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUPERMARKETS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SALES">
+              <PropertyRef Name="SUPERMARKET_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="MEASURMENT_UNITS" EntityType="Self.MEASURMENT_UNITS" Schema="SYSTEM" store:Type="Tables" />
+          <EntitySet Name="PRODUCTS" EntityType="Self.PRODUCTS" Schema="SYSTEM" store:Type="Tables" />
+          <EntitySet Name="SALES" EntityType="Self.SALES" Schema="SYSTEM" store:Type="Tables" />
+          <EntitySet Name="SUPERMARKETS" EntityType="Self.SUPERMARKETS" Schema="SYSTEM" store:Type="Tables" />
+          <EntitySet Name="VENDORS" EntityType="Self.VENDORS" Schema="SYSTEM" store:Type="Tables" />
+          <AssociationSet Name="PRODUCTS_MEASURMENT_UNIT_FK" Association="Self.PRODUCTS_MEASURMENT_UNIT_FK">
+            <End Role="MEASURMENT_UNITS" EntitySet="MEASURMENT_UNITS" />
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="PRODUCTS_VENDORS_FK" Association="Self.PRODUCTS_VENDORS_FK">
+            <End Role="VENDORS" EntitySet="VENDORS" />
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="SALES_PRODUCTS_FK" Association="Self.SALES_PRODUCTS_FK">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="SALES" EntitySet="SALES" />
+          </AssociationSet>
+          <AssociationSet Name="SALES_SUPERMARKETS_FK" Association="Self.SALES_SUPERMARKETS_FK">
+            <End Role="SUPERMARKETS" EntitySet="SUPERMARKETS" />
+            <End Role="SALES" EntitySet="SALES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MEASURMENT_UNITS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PRODUCTS" Relationship="Self.PRODUCTS_MEASURMENT_UNIT_FK" FromRole="MEASURMENT_UNITS" ToRole="PRODUCTS" />
+        </EntityType>
+        <EntityType Name="PRODUCT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VENDOR_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MEASURMENT_UNIT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PRICE" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="MEASURMENT_UNITS" Relationship="Self.PRODUCTS_MEASURMENT_UNIT_FK" FromRole="PRODUCTS" ToRole="MEASURMENT_UNITS" />
+          <NavigationProperty Name="VENDOR" Relationship="Self.PRODUCTS_VENDORS_FK" FromRole="PRODUCTS" ToRole="VENDORS" />
+          <NavigationProperty Name="SALES" Relationship="Self.SALES_PRODUCTS_FK" FromRole="PRODUCTS" ToRole="SALES" />
+        </EntityType>
+        <EntityType Name="SALE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SALED_ON" Type="DateTime" Nullable="false" />
+          <Property Name="SUPERMARKET_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PRODUCT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="QUANTITY" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="PRODUCT" Relationship="Self.SALES_PRODUCTS_FK" FromRole="SALES" ToRole="PRODUCTS" />
+          <NavigationProperty Name="SUPERMARKET" Relationship="Self.SALES_SUPERMARKETS_FK" FromRole="SALES" ToRole="SUPERMARKETS" />
+        </EntityType>
+        <EntityType Name="SUPERMARKET">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="SALES" Relationship="Self.SALES_SUPERMARKETS_FK" FromRole="SUPERMARKETS" ToRole="SALES" />
+        </EntityType>
+        <EntityType Name="VENDOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PRODUCTS" Relationship="Self.PRODUCTS_VENDORS_FK" FromRole="VENDORS" ToRole="PRODUCTS" />
+        </EntityType>
+        <Association Name="PRODUCTS_MEASURMENT_UNIT_FK">
+          <End Role="MEASURMENT_UNITS" Type="Self.MEASURMENT_UNITS" Multiplicity="1" />
+          <End Role="PRODUCTS" Type="Self.PRODUCT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MEASURMENT_UNITS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUCTS">
+              <PropertyRef Name="MEASURMENT_UNIT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRODUCTS_VENDORS_FK">
+          <End Role="VENDORS" Type="Self.VENDOR" Multiplicity="1" />
+          <End Role="PRODUCTS" Type="Self.PRODUCT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VENDORS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUCTS">
+              <PropertyRef Name="VENDOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SALES_PRODUCTS_FK">
+          <End Role="PRODUCTS" Type="Self.PRODUCT" Multiplicity="1" />
+          <End Role="SALES" Type="Self.SALE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SALES">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SALES_SUPERMARKETS_FK">
+          <End Role="SUPERMARKETS" Type="Self.SUPERMARKET" Multiplicity="1" />
+          <End Role="SALES" Type="Self.SALE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUPERMARKETS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SALES">
+              <PropertyRef Name="SUPERMARKET_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MEASURMENT_UNITS" EntityType="Self.MEASURMENT_UNITS" />
+          <EntitySet Name="PRODUCTS" EntityType="Self.PRODUCT" />
+          <EntitySet Name="SALES" EntityType="Self.SALE" />
+          <EntitySet Name="SUPERMARKETS" EntityType="Self.SUPERMARKET" />
+          <EntitySet Name="VENDORS" EntityType="Self.VENDOR" />
+          <AssociationSet Name="PRODUCTS_MEASURMENT_UNIT_FK" Association="Self.PRODUCTS_MEASURMENT_UNIT_FK">
+            <End Role="MEASURMENT_UNITS" EntitySet="MEASURMENT_UNITS" />
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="PRODUCTS_VENDORS_FK" Association="Self.PRODUCTS_VENDORS_FK">
+            <End Role="VENDORS" EntitySet="VENDORS" />
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="SALES_PRODUCTS_FK" Association="Self.SALES_PRODUCTS_FK">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="SALES" EntitySet="SALES" />
+          </AssociationSet>
+          <AssociationSet Name="SALES_SUPERMARKETS_FK" Association="Self.SALES_SUPERMARKETS_FK">
+            <End Role="SUPERMARKETS" EntitySet="SUPERMARKETS" />
+            <End Role="SALES" EntitySet="SALES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="MEASURMENT_UNITS">
+            <EntityTypeMapping TypeName="Model.MEASURMENT_UNITS">
+              <MappingFragment StoreEntitySet="MEASURMENT_UNITS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTS">
+            <EntityTypeMapping TypeName="Model.PRODUCT">
+              <MappingFragment StoreEntitySet="PRODUCTS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
+                <ScalarProperty Name="MEASURMENT_UNIT_ID" ColumnName="MEASURMENT_UNIT_ID" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SALES">
+            <EntityTypeMapping TypeName="Model.SALE">
+              <MappingFragment StoreEntitySet="SALES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SALED_ON" ColumnName="SALED_ON" />
+                <ScalarProperty Name="SUPERMARKET_ID" ColumnName="SUPERMARKET_ID" />
+                <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+                <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUPERMARKETS">
+            <EntityTypeMapping TypeName="Model.SUPERMARKET">
+              <MappingFragment StoreEntitySet="SUPERMARKETS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VENDORS">
+            <EntityTypeMapping TypeName="Model.VENDOR">
+              <MappingFragment StoreEntitySet="VENDORS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
