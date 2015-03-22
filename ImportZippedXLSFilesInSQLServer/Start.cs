@@ -67,22 +67,16 @@
                                                     SoldOn = dateKey,
                                                     SupermarketId =
                                                         db.Supermarkets.First(p => p.Name == supermarketName).Id,
-                                                    ProductId = db.Products.First(p => p.Name == productName).Id,
+                                                    ProductId = db.Products.First(p => p.Name == productName &&
+                                                        p.Price == price).Id,
                                                     Quantity = quantity
                                                 };
                                                 if (db.Sales.FirstOrDefault(p => p.SoldOn == newSale.SoldOn &&
                                                                         p.SupermarketId == newSale.SupermarketId &&
                                                                         p.ProductId == newSale.ProductId) == null)
                                                 {
-                                                    db.Sales.Add(new Sale
-                                                    {
-                                                        SoldOn = dateKey,
-                                                        SupermarketId =
-                                                            db.Supermarkets.First(p => p.Name == supermarketName).Id,
-                                                        ProductId = db.Products.First(p => p.Name == productName).Id,
-                                                        Quantity = quantity
-                                                    });
-                                                    db.SaveChanges();
+                                                    db.Sales.Add(newSale);
+                                                    db.SaveChanges();                                                    
                                                 }
                                                 else
                                                 {
@@ -120,8 +114,8 @@
                                                         db.Products.First(p => p.Name == productName && p.Price == price)
                                                             .Id,
                                                     Quantity = quantity
-                                                });
-                                                db.SaveChanges();
+                                                });                                                
+                                                db.SaveChanges();                                                
                                             }
                                         }
                                     }
@@ -140,15 +134,29 @@
                                             var price = decimal.Parse(row[2]);
                                             if (db.Products.Any(q => q.Name == productName && q.Price == price))
                                             {
-                                                db.Sales.Add(new Sale
+                                                var newSale = new Sale
                                                 {
                                                     SoldOn = dateKey,
                                                     SupermarketId =
                                                         db.Supermarkets.First(p => p.Name == newSupermarket.Name).Id,
-                                                    ProductId = db.Products.First(p => p.Name == productName).Id,
+                                                    ProductId = db.Products.First(p => p.Name == productName &&
+                                                        p.Price == price).Id,
                                                     Quantity = quantity
-                                                });
-                                                db.SaveChanges();
+                                                };
+                                                if (db.Sales.FirstOrDefault(p => p.SoldOn == newSale.SoldOn &&
+                                                                        p.SupermarketId == newSale.SupermarketId &&
+                                                                        p.ProductId == newSale.ProductId) == null)
+                                                {
+                                                    db.Sales.Add(newSale);
+                                                    db.SaveChanges();                                                    
+                                                }
+                                                else
+                                                {
+                                                    Console.WriteLine("There is already imported .xls report for product {0} on date {1}, in supermarket {2}!",
+                                                        db.Products.First(p => p.Id == newSale.ProductId).Name, newSale.SoldOn,
+                                                        db.Supermarkets.First(p => p.Id == newSale.SupermarketId).Name);
+                                                    Console.WriteLine();
+                                                }                                                
                                             }
                                             else
                                             {
@@ -182,7 +190,6 @@
                                             }
                                         }
                                     }
-
                                 }
                             }
                         }
