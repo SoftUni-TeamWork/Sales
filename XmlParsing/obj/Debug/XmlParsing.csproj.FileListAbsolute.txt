@@ -1,0 +1,12 @@
+E:\Softuni\SqlSales\trunk\XmlParsing\bin\Debug\XmlParsing.exe.config
+E:\Softuni\SqlSales\trunk\XmlParsing\bin\Debug\XmlParsing.exe
+E:\Softuni\SqlSales\trunk\XmlParsing\bin\Debug\XmlParsing.pdb
+E:\Softuni\SqlSales\trunk\XmlParsing\bin\Debug\ReplicateOracleDBIntoMSSQL.exe
+E:\Softuni\SqlSales\trunk\XmlParsing\bin\Debug\EntityFramework.dll
+E:\Softuni\SqlSales\trunk\XmlParsing\bin\Debug\ReplicateOracleDBIntoMSSQL.pdb
+E:\Softuni\SqlSales\trunk\XmlParsing\bin\Debug\EntityFramework.xml
+E:\Softuni\SqlSales\trunk\XmlParsing\obj\Debug\XmlParsing.csprojResolveAssemblyReference.cache
+E:\Softuni\SqlSales\trunk\XmlParsing\obj\Debug\XmlParsing.exe
+E:\Softuni\SqlSales\trunk\XmlParsing\obj\Debug\XmlParsing.pdb
+E:\Softuni\SqlSales\trunk\XmlParsing\bin\Debug\EntityFramework.SqlServer.dll
+E:\Softuni\SqlSales\trunk\XmlParsing\bin\Debug\EntityFramework.SqlServer.xml

@@ -17,5 +17,6 @@
         public virtual DbSet<Sale> Sales { get; set; }
         public virtual DbSet<Supermarket> Supermarkets { get; set; }
         public virtual DbSet<Vendor> Vendors { get; set; }
+        public virtual DbSet<Expenses> Expenses { get; set; }
     }
 }
