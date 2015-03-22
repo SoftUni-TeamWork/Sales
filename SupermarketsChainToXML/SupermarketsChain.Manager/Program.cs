@@ -9,7 +9,7 @@
     using System.Xml;
     using System.Xml.Linq;
 
-    internal class Summary
+    internal class Summary : IComparable<Summary>
     {
         public Summary(DateTime date, decimal totalSum)
         {
@@ -20,6 +20,11 @@
         public DateTime Date { get; set; }
 
         public decimal TotalSum { get; set; }
+
+        public int CompareTo(Summary other)
+        {
+            return this.Date.CompareTo(other.Date);
+        }
     }
 
     public class Program
@@ -31,7 +36,7 @@
 
             var context = new SupermarketsChainEntities();
             var startDate = new DateTime(2015, 1, 1);
-            var endDate = new DateTime(2015, 6, 30);
+            var endDate = new DateTime(2015, 3, 30);
 
             Console.WriteLine("Generating report from sales to xml...");
             var sales = SalesByVendors(context, startDate, endDate);
@@ -39,28 +44,28 @@
             Console.WriteLine("The report is done!");
         }
 
-        private static Dictionary<string, List<Summary>> SalesByVendors(SupermarketsChainEntities context, DateTime startDate, DateTime endDate)
+        private static Dictionary<string, SortedSet<Summary>> SalesByVendors(SupermarketsChainEntities context, DateTime startDate, DateTime endDate)
         {
             using (context)
             {
-                var salesResult = new Dictionary<string, List<Summary>>();
+                var salesResult = new Dictionary<string, SortedSet<Summary>>();
                 var sales = context.Sales.Select(s => new
                 {
                     s.Product,
                     s.Product.Vendor,
-                    s.SaledOn
+                    s.SoldOn
                 });
 
                 foreach (var sale in sales)
                 {
-                    if (startDate <= sale.SaledOn && sale.SaledOn <= endDate)
+                    if (startDate <= sale.SoldOn && sale.SoldOn <= endDate)
                     {
                         var vendorName = sale.Product.Vendor.Name;
                         if (!salesResult.ContainsKey(vendorName))
                         {
-                            salesResult[vendorName] = new List<Summary>();
+                            salesResult[vendorName] = new SortedSet<Summary>();
                         }
-                        var summary = new Summary(sale.SaledOn, sale.Product.Price);
+                        var summary = new Summary(sale.SoldOn, sale.Product.Price);
                         var summariesWithEqualDates = salesResult[vendorName].Where(x => x.Date == summary.Date);
 
                         if (summariesWithEqualDates.Count() == 0)
@@ -78,7 +83,7 @@
             }
         }
 
-        private static void GenerateXmlFromSales(Dictionary<string, List<Summary>> sales, string resultFileName)
+        private static void GenerateXmlFromSales(Dictionary<string, SortedSet<Summary>> sales, string resultFileName)
         {
             var doc = new XDocument();
             var xSales = new XElement("sales");

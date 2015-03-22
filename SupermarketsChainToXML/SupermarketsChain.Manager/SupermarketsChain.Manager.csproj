@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SupermarketsChain.Data\SupermarketsChain.Data.csproj">
-      <Project>{17877c57-b835-459e-878f-854d4ec73ced}</Project>
+      <Project>{2eead947-569a-4f2d-b7eb-8896f5017018}</Project>
       <Name>SupermarketsChain.Data</Name>
     </ProjectReference>
   </ItemGroup>

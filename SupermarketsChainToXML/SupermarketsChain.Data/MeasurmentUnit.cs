@@ -12,21 +12,16 @@ namespace SupermarketsChain.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class MeasurmentUnit
     {
-        public Product()
+        public MeasurmentUnit()
         {
-            this.Sales = new HashSet<Sale>();
+            this.Products = new HashSet<Product>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public int VendorId { get; set; }
-        public int MeasurmentUnitId { get; set; }
-        public decimal Price { get; set; }
     
-        public virtual MeasurmentUnit MeasurmentUnit { get; set; }
-        public virtual Vendor Vendor { get; set; }
-        public virtual ICollection<Sale> Sales { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

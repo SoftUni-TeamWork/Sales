@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sales>
+  <sale vendor="Norske Meierier">
+    <summary date="05-Feb-2015" total-sum="2.50" />
+    <summary date="04-Mar-2015" total-sum="36.00" />
+  </sale>
+  <sale vendor="Nord-Ost-Fisch Handelsgesellschaft mbH">
+    <summary date="02-Feb-2015" total-sum="25.89" />
+  </sale>
+  <sale vendor="Mayumi's">
+    <summary date="22-Jan-2015" total-sum="46.50" />
+    <summary date="07-Feb-2015" total-sum="23.25" />
+    <summary date="25-Feb-2015" total-sum="23.25" />
+  </sale>
+  <sale vendor="Specialty Biscuits, Ltd.">
+    <summary date="27-Jan-2015" total-sum="12.50" />
+    <summary date="03-Mar-2015" total-sum="12.50" />
+  </sale>
+  <sale vendor="Ma Maison">
+    <summary date="24-Jan-2015" total-sum="7.45" />
+    <summary date="22-Feb-2015" total-sum="24.00" />
+  </sale>
+  <sale vendor="Formaggi Fortini s.r.l.">
+    <summary date="30-Jan-2015" total-sum="32.00" />
+    <summary date="06-Mar-2015" total-sum="34.80" />
+  </sale>
+  <sale vendor="New Orleans Cajun Delights">
+    <summary date="15-Jan-2015" total-sum="21.35" />
+    <summary date="16-Feb-2015" total-sum="17.00" />
+    <summary date="22-Feb-2015" total-sum="22.00" />
+  </sale>
+  <sale vendor="Pavlova, Ltd.">
+    <summary date="11-Jan-2015" total-sum="62.50" />
+    <summary date="02-Feb-2015" total-sum="39.00" />
+    <summary date="07-Feb-2015" total-sum="62.50" />
+    <summary date="11-Mar-2015" total-sum="39.00" />
+  </sale>
+  <sale vendor="Heli Su?waren GmbH &amp; Co. KG">
+    <summary date="24-Jan-2015" total-sum="14.00" />
+  </sale>
+  <sale vendor="PB Knackebrod AB">
+    <summary date="04-Feb-2015" total-sum="21.00" />
+  </sale>
+  <sale vendor="Leka Trading">
+    <summary date="14-Jan-2015" total-sum="46.00" />
+    <summary date="17-Jan-2015" total-sum="14.00" />
+    <summary date="03-Mar-2015" total-sum="46.00" />
+  </sale>
+  <sale vendor="Pasta Buttini s.r.l.">
+    <summary date="21-Jan-2015" total-sum="38.00" />
+    <summary date="12-Feb-2015" total-sum="19.50" />
+  </sale>
+  <sale vendor="Grandma Kelly's Homestead">
+    <summary date="17-Jan-2015" total-sum="25.00" />
+    <summary date="12-Feb-2015" total-sum="40.00" />
+    <summary date="23-Feb-2015" total-sum="40.00" />
+  </sale>
+  <sale vendor="Svensk Sjofoda AB">
+    <summary date="21-Jan-2015" total-sum="19.00" />
+    <summary date="12-Feb-2015" total-sum="19.00" />
+  </sale>
+  <sale vendor="Karkki Oy">
+    <summary date="21-Feb-2015" total-sum="20.00" />
+  </sale>
+  <sale vendor="Zaanse Snoepfabriek">
+    <summary date="17-Feb-2015" total-sum="12.75" />
+  </sale>
+  <sale vendor="Escargots Nouveaux">
+    <summary date="02-Mar-2015" total-sum="13.25" />
+  </sale>
+  <sale vendor="Exotic Liquids">
+    <summary date="12-Jan-2015" total-sum="18.00" />
+    <summary date="24-Feb-2015" total-sum="19.00" />
+  </sale>
+  <sale vendor="Gai paturage">
+    <summary date="24-Jan-2015" total-sum="34.00" />
+  </sale>
+  <sale vendor="Plutzer Lebensmittelgro?markte AG">
+    <summary date="11-Mar-2015" total-sum="123.79" />
+  </sale>
+  <sale vendor="Cooperativa de Quesos 'Las Cabras'">
+    <summary date="15-Jan-2015" total-sum="38.00" />
+  </sale>
+</sales>

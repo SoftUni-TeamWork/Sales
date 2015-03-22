@@ -25,7 +25,8 @@ namespace SupermarketsChain.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<MeasurementUnit> MeasurementUnits { get; set; }
+        public DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public DbSet<MeasurmentUnit> MeasurmentUnits { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Sale> Sales { get; set; }
         public DbSet<Supermarket> Supermarkets { get; set; }

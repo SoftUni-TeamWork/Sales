@@ -4,16 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b71cce23e82d446ba9001fdbd2c6d315" Name="Diagram1">
-        <EntityTypeShape EntityType="SupermarketsChain.Models.MeasurementUnit" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SupermarketsChain.Models.Product" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SupermarketsChain.Models.Sale" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SupermarketsChain.Models.Supermarket" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SupermarketsChain.Models.Vendor" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <AssociationConnector Association="SupermarketsChain.Models.FK_Products_MeasurementUnits" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketsChain.Models.FK_Products_Vendors" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketsChain.Models.FK_Sales_Products" ManuallyRouted="false" />
-        <AssociationConnector Association="SupermarketsChain.Models.FK_Sales_Supermarkets" ManuallyRouted="false" />
+      <Diagram DiagramId="362998f0513248739c83672f6745bf86" Name="Diagram1">
+        <EntityTypeShape EntityType="SupermarketsChainModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketsChainModel.MeasurmentUnit" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketsChainModel.Product" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketsChainModel.Sale" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketsChainModel.Supermarket" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketsChainModel.Vendor" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="SupermarketsChainModel.FK_dbo_Products_dbo_MeasurmentUnits_MeasurmentUnitId" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketsChainModel.FK_dbo_Products_dbo_Vendors_VendorId" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketsChainModel.FK_dbo_Sales_dbo_Products_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketsChainModel.FK_dbo_Sales_dbo_Supermarkets_SupermarketId" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

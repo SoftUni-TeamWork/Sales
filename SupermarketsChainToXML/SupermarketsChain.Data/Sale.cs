@@ -15,7 +15,7 @@ namespace SupermarketsChain.Data
     public partial class Sale
     {
         public int Id { get; set; }
-        public System.DateTime SaledOn { get; set; }
+        public System.DateTime SoldOn { get; set; }
         public int SupermarketId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
