@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Data.Mongo", "Sales.Data.Mongo\Sales.Data.Mongo.csproj", "{6906D0A6-7917-4E86-B942-ABD9F79A7CB8}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplicateOracleDBIntoMSSQL", "ReplicateOracleDBIntoMSSQL\ReplicateOracleDBIntoMSSQL.csproj", "{9162E030-B71A-4782-A044-60D459C68BC8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportZippedXLSFilesInSQLServer", "ImportZippedXLSFilesInSQLServer\ImportZippedXLSFilesInSQLServer.csproj", "{8085B8AA-F4D0-4302-A5C4-5E7345D0FE90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadDataToMySQL", "LoadDataToMySQL\LoadDataToMySQL.csproj", "{222F4E62-5E7E-41E1-8332-CF83C014F987}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{8085B8AA-F4D0-4302-A5C4-5E7345D0FE90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8085B8AA-F4D0-4302-A5C4-5E7345D0FE90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8085B8AA-F4D0-4302-A5C4-5E7345D0FE90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{222F4E62-5E7E-41E1-8332-CF83C014F987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{222F4E62-5E7E-41E1-8332-CF83C014F987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{222F4E62-5E7E-41E1-8332-CF83C014F987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{222F4E62-5E7E-41E1-8332-CF83C014F987}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
